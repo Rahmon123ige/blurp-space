@@ -1,0 +1,116 @@
+/* src/styles/CategoryShowcase.css */
+
+.category-section {
+  padding: 3rem 2rem;
+  background-color: #ffffff;
+}
+
+/* Header with nav icons */
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.category-section h2 {
+  font-size: 2rem;
+  color: black;
+}
+
+/* Nav buttons (hidden by default) */
+.nav-icons {
+  display: none;
+  gap: 0.5rem;
+}
+
+.scroll-btn {
+  background-color: #f4f7f9;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  font-size: 1.2rem;
+}
+
+.scroll-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+/* Card container - scrollable on mobile */
+.category-scroll {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.category-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card style */
+.category-card {
+  background-color: #fff;
+  color: black;
+  flex: 0 0 200px;
+  margin-right: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease;
+  scroll-snap-align: start;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+}
+
+.image-box {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.1);
+}
+
+.category-card p {
+  text-align: center;
+  padding: 0.8rem;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .category-section {
+    padding: 2rem 1rem;
+  }
+
+  .category-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .nav-icons {
+    display: flex;
+    margin-left: 16rem;
+  }
+
+  .category-card {
+    flex: 0 0 75%;
+  }
+}

@@ -1,0 +1,73 @@
+/* src/styles/InfoBanner.css */
+
+.info-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f4f7f9;
+  padding: 2rem;
+  gap: 1.5rem;
+  border-radius: 12px;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  height: 200px;
+}
+
+.info-card {
+  flex: 1 1 20%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 200px;
+}
+
+.icon {
+  font-size: 1.8rem;
+  color: black;
+}
+
+.info-text h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: black;
+  margin: 0;
+}
+
+.info-text p {
+  font-size: 0.9rem;
+  color: black;
+  margin: 2px 0 0;
+  font-weight: 400;
+}
+
+/* Divider line between cards */
+.divider {
+  width: 4px;
+  background-color: #FFFFFf;
+  height: 40px;
+}
+
+@media screen and (max-width: 768px) {
+  .info-banner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .info-card {
+    flex: unset;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .divider {
+    display: none;
+  }
+}
+

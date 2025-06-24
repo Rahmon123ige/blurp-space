@@ -1,0 +1,83 @@
+/* src/styles/Hero.css */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: #f8f8f8;
+}
+
+.hero-categories,
+.hero-contact {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: fit-content;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Category boxes */
+.hero-category {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1rem;
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-category:hover {
+  color: #ff3ea5;
+  transform: translateX(4px);
+}
+
+/* Carousel */
+.hero-carousel {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.hero-carousel img {
+  height: 100%;
+  max-height: none;
+  object-fit: cover;
+}
+
+/* Contact section */
+.contact-box {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.95rem;
+  color: black;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-box:hover {
+  color: #ff3ea5;
+  transform: translateX(4px);
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .hero-categories,
+  .hero-contact {
+    display: none;
+  }
+
+  .hero-carousel img {
+    max-height: 280px;
+  }
+}

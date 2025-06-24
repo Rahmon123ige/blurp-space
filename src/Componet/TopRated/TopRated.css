@@ -1,0 +1,76 @@
+/* src/styles/TopRated.css */
+
+.top-rated {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 350px;
+  box-sizing: border-box;
+}
+
+.top-rated h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: black;
+}
+
+.top-product {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.top-product:hover {
+  transform: scale(1.02);
+}
+
+.top-product img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.top-info h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: black;
+}
+
+.stars {
+  display: flex;
+  color: black;
+  font-size: 0.9rem;
+}
+
+.price {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.old {
+  color: #f4f7f9;
+  text-decoration: line-through;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.new {
+  color: black;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Responsive stacking */
+@media screen and (max-width: 768px) {
+  .top-rated {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+}
