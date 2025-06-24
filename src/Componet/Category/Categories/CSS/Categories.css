@@ -1,0 +1,133 @@
+/* src/styles/Categories.css */
+
+.gadget-section {
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-top: 2rem;
+  overflow-x: auto;
+  padding: 0;
+}
+
+.gadget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffc0cb; /* pink bg */
+  padding: 1rem 1.5rem;
+  border-radius: 10px 10px 0 0;
+}
+
+.gadget-header h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: black;
+}
+
+.gadget-header .see-more {
+  font-size: 0.95rem;
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.gadget-header .see-more:hover {
+  color: #333;
+}
+
+/* Scrollable products */
+.gadget-scroll {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.gadget-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.gadget-card {
+  flex: 0 0 160px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.06);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.gadget-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gadget-image {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.gadget-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.gadget-card h4 {
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+  color: black;
+  height: 2.2rem;
+  overflow: hidden;
+}
+
+.gadget-price {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.gadget-price .new {
+  font-weight: 700;
+  color: black;
+  font-size: 0.9rem;
+}
+
+.gadget-price .old {
+  font-size: 0.75rem;
+  color: #999;
+  text-decoration: line-through;
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+  .gadget-card {
+    flex: 0 0 65%;
+  }
+
+  .gadget-image {
+    height: 70px;
+  }
+
+  .gadget-card h4 {
+    font-size: 0.8rem;
+  }
+
+  .gadget-price .new {
+    font-size: 0.85rem;
+  }
+
+  .gadget-price .old {
+    font-size: 0.7rem;
+  }
+}
