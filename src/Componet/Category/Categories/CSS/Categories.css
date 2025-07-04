@@ -1,10 +1,8 @@
-/* src/styles/Categories.css */
-
 .gadget-section {
   background-color: #ffffff;
   border-radius: 10px;
   margin-top: 2rem;
-  overflow-x: auto;
+  overflow-x: hidden;
   padding: 0;
 }
 
@@ -12,20 +10,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffc0cb; /* pink bg */
+  background-color: #ff3ea5;
   padding: 1rem 1.5rem;
   border-radius: 10px 10px 0 0;
 }
 
 .gadget-header h2 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: black;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: white;
 }
 
 .gadget-header .see-more {
   font-size: 0.95rem;
-  color: black;
+  color: white;
   display: flex;
   align-items: center;
   gap: 0.3rem;
@@ -34,10 +32,10 @@
 }
 
 .gadget-header .see-more:hover {
-  color: #333;
+  color: #222;
 }
 
-/* Scrollable products */
+/* Scrollable container */
 .gadget-scroll {
   display: flex;
   gap: 1rem;
@@ -45,6 +43,7 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 .gadget-scroll::-webkit-scrollbar {
@@ -52,23 +51,24 @@
 }
 
 .gadget-card {
-  flex: 0 0 160px;
+  flex: 0 0 140px;
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.06);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   scroll-snap-align: start;
-  transition: transform 0.3s ease;
-  padding: 0.8rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 0.75rem;
   text-align: center;
+  cursor: pointer;
 }
 
 .gadget-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
 
 .gadget-image {
-  height: 80px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,15 +79,23 @@
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.gadget-card:hover img {
+  transform: scale(1.08);
 }
 
 .gadget-card h4 {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 500;
   margin: 0.5rem 0;
   color: black;
   height: 2.2rem;
   overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .gadget-price {
@@ -100,11 +108,11 @@
 .gadget-price .new {
   font-weight: 700;
   color: black;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .gadget-price .old {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: #999;
   text-decoration: line-through;
 }
@@ -112,7 +120,8 @@
 /* Mobile */
 @media screen and (max-width: 480px) {
   .gadget-card {
-    flex: 0 0 65%;
+    flex: 0 0 120px;
+    padding: 0.6rem;
   }
 
   .gadget-image {
@@ -120,14 +129,14 @@
   }
 
   .gadget-card h4 {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 
   .gadget-price .new {
-    font-size: 0.85rem;
+    font-size: 0.78rem;
   }
 
   .gadget-price .old {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
   }
 }

@@ -1,37 +1,33 @@
-/* src/styles/CategoryShowcase.css */
-
 .category-section {
-  padding: 3rem 2rem;
+  padding: 2rem 1.5rem;
   background-color: #ffffff;
 }
 
-/* Header with nav icons */
 .category-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
-.category-section h2 {
-  font-size: 2rem;
+.category-header h2 {
+  font-size: 1.5rem;
   color: black;
 }
 
-/* Nav buttons (hidden by default) */
 .nav-icons {
-  display: none;
+  display: flex;
   gap: 0.5rem;
 }
 
 .scroll-btn {
   background-color: #f4f7f9;
   border: none;
-  padding: 0.5rem;
+  padding: 0.4rem;
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s ease, color 0.3s ease;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .scroll-btn:hover {
@@ -39,12 +35,10 @@
   color: white;
 }
 
-/* Card container - scrollable on mobile */
 .category-scroll {
   display: flex;
-  gap: 1.5rem;
+  gap: 0.8rem;
   overflow-x: auto;
-  padding-bottom: 1rem;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
 }
@@ -53,27 +47,27 @@
   display: none;
 }
 
-/* Card style */
 .category-card {
+  flex: 0 0 12.5%; /* 100 / 8 cards = 12.5% */
+  min-width: 120px;
+  height: 190px;
   background-color: #fff;
   color: black;
-  flex: 0 0 200px;
-  margin-right: 3rem;
-  border-radius: 10px;
+  border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
-  transition: transform 0.3s ease;
   scroll-snap-align: start;
+  transition: transform 0.3s ease;
 }
 
 .category-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
 }
 
 .image-box {
   width: 100%;
-  height: 180px;
+  height: 150px;
   overflow: hidden;
-  border-radius: 10px 10px 0 0;
+  border-radius: 8px 8px 0 0;
 }
 
 .image-box img {
@@ -84,33 +78,32 @@
 }
 
 .category-card:hover img {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .category-card p {
   text-align: center;
-  padding: 0.8rem;
+  padding: 0.6rem;
   font-weight: 500;
+  font-size: 0.9rem;
 }
 
-/* Responsive adjustments */
+/* Mobile view (5 cards) */
 @media screen and (max-width: 768px) {
-  .category-section {
-    padding: 2rem 1rem;
-  }
-
-  .category-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-
-  .nav-icons {
-    display: flex;
-    margin-left: 16rem;
+  .category-scroll {
+    gap: 0.6rem;
   }
 
   .category-card {
-    flex: 0 0 75%;
+    flex: 0 0 20%; /* 100 / 5 cards = 20% */
+    min-width: 100px;
+  }
+
+  .image-box {
+    height: 130px;
+  }
+ 
+  .category-card p {
+    font-size: 0.8rem;
   }
 }

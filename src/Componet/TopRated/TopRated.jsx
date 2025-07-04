@@ -39,6 +39,34 @@ const topRatedProducts = [
     oldPrice: "₦33,000.00",
     newPrice: "₦28,000.00",
   },
+  {
+    id: 6,
+    name: "MARCO PERFUMES",
+    image: "/src/Data/marco peff.webp",
+    oldPrice: "₦35,000.00",
+    newPrice: "₦28,000.00",
+  },
+  {
+    id: 7,
+    name: "MARCO PERFUMES",
+    image: "/src/Data/marco peff.webp",
+    oldPrice: "₦35,000.00",
+    newPrice: "₦28,000.00",
+  },
+  {
+    id: 8,
+    name: "MARCO PERFUMES",
+    image: "/src/Data/marco peff.webp",
+    oldPrice: "₦35,000.00",
+    newPrice: "₦28,000.00",
+  },
+  {
+    id: 9,
+    name: "MARCO PERFUMES",
+    image: "/src/Data/marco peff.webp",
+    oldPrice: "₦35,000.00",
+    newPrice: "₦28,000.00",
+  },
 ];
 
 const TopRated = () => {

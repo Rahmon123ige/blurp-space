@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Splash from "./Componet/Splash-screen/Splash";
 import Navbar from "./Componet/Navbar/Navbar";
-import Hero from "./Componet/Hero/Hero";
-import CategoryShow from "./Componet/Category-show/CategoryShow";
-import Banner from "./Componet/banner/Banner";
 import Home from "./Pages/Home";
+import Footer from "./Footer/Footer";
+// import TopHeader from "./Componet/TopHeader/TopHeader";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -17,12 +16,10 @@ const App = () => {
 
   return <>{loading ? <Splash /> : (
       <>
+      {/* <TopHeader/> */}
         <Navbar />
-        <Hero />
-        <CategoryShow/>
-        <Banner/>
         <Home/>
-        
+        <Footer/>
       </>
     )}</>;
 };

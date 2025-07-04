@@ -1,0 +1,65 @@
+.expandable-wrapper {
+  background-color: #ffffff;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  margin: 2rem 0;
+}
+
+.expandable-content {
+  transition: max-height 0.4s ease;
+  max-height: none;
+  overflow: visible;
+  position: relative;
+  line-height: 1.7;
+  color: #333;
+}
+
+.expandable-content h3 {
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.expandable-content p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .expandable-content {
+    max-height: 180px;
+    overflow: hidden;
+  }
+
+  .expandable-content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .expanded .expandable-content {
+    max-height: 1000px;
+  }
+
+  .expanded .expandable-content::after {
+    opacity: 0;
+  }
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+}

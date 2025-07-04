@@ -59,13 +59,55 @@ const topValuedProducts = [
     oldPrice: "₦38,000.00",
     newPrice: "₦33,000.00",
   },
+  {
+    id: 9,
+    name: "POEDAGAR Long Lasting / Non Fading Leather Wristwatch",
+    image: "/src/Data/watch.webp",
+    oldPrice: "₦40,000.00",
+    newPrice: "₦38,000.00",
+  },
+  {
+    id: 10,
+    name: "POEDAGAR Long Lasting / Non Fading Leather Wristwatch",
+    image: "/src/Data/watch.webp",
+    oldPrice: "₦40,000.00",
+    newPrice: "₦38,000.00",
+  },
+  {
+    id: 11,
+    name: "MAXIM ROI PERFUMES(100ML) FOR MEN",
+    image: "/src/Data/maxim.webp",
+    oldPrice: "₦43,000.00",
+    newPrice: "₦38,000.00",
+  },
+  {
+    id: 12,
+    name: "MAXIM ROI PERFUMES(100ML) FOR MEN",
+    image: "/src/Data/maxim.webp",
+    oldPrice: "₦43,000.00",
+    newPrice: "₦38,000.00",
+  },
+  {
+    id: 13,
+    name: "MAXIM ROI PERFUMES(100ML) FOR MEN",
+    image: "/src/Data/maxim.webp",
+    oldPrice: "₦43,000.00",
+    newPrice: "₦38,000.00",
+  },
+  {
+    id: 14,
+    name: "MAXIM ROI PERFUMES(100ML) FOR MEN",
+    image: "/src/Data/maxim.webp",
+    oldPrice: "₦43,000.00",
+    newPrice: "₦38,000.00",
+  },
 ];
 
 const MostValued = () => {
   return (
     <div className="top-valued">
       <h2>Top Value Products</h2>
-      <div className="product-grid">
+      <div className="grid">
         {topValuedProducts.map((item) => (
           <div className="product-card" key={item.id}>
             <div className="image-wrap">
