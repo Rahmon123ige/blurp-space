@@ -10,7 +10,11 @@ const FlipCarousel = () => {
   return (
     <div className="flip-carousel">
       {flipItems.map((item, i) => (
-        <div className="flip-card" key={i}>
+         <div
+    className="flip-card"
+    key={i}
+    style={{ height: i === 0 ? "290px" : "180px", width: "100%" }} // 1st card taller
+  >
           <div className="flip-inner">
             <div className="flip-front">
               <video

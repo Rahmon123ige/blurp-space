@@ -1,16 +1,17 @@
 import React, { useRef } from "react";
 import "./CategoryShow.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { Link } from "react-router-dom"; // ✅ add this for routing
 
 const products = [
-  { id: 1, name: "Digital Camera", image: "/src/Data/camera.jpg" },
+  { id: 1, name: "Camera", image: "/src/Data/camera.jpg" },
   { id: 2, name: "Skin Care", image: "/src/Data/skincare.webp" },
   { id: 3, name: "Perfumes", image: "/src/Data/perfume.jpg" },
-  { id: 4, name: "Tripod Stand", image: "/src/Data/stand.jpg" },
+  { id: 4, name: "Tripods", image: "/src/Data/stand.jpg" },
   { id: 5, name: "Microphone", image: "/src/Data/mic.jpg" },
-  { id: 6, name: "Fashion", image: "/src/Data/jacket.jpeg" },
+  { id: 6, name: "Fashion Accessories", image: "/src/Data/jacket.jpeg" },
   { id: 7, name: "Headphones", image: "/src/Data/headset.webp" },
-  { id: 8, name: "Lenses", image: "/src/Data/Canon EF-S 24mm f 2.8 STM Lens - Down.webp" },
+  { id: 8, name: "Lens", image: "/src/Data/Canon EF-S 24mm f 2.8 STM Lens - Down.webp" },
   { id: 9, name: "Watches", image: "/src/Data/watch.webp" },
   { id: 10, name: "Shoes", image: "/src/Data/Shoes-Men.jpg" },
   { id: 11, name: "Perfumes", image: "/src/Data/perfumes.jpg" },
@@ -44,12 +45,16 @@ const CategoryShow = () => {
 
       <div className="category-scroll" ref={scrollRef}>
         {products.map((item) => (
-          <div className="category-card" key={item.id}>
+          <Link
+            to={`/category/${encodeURIComponent(item.name)}`} // ✅ navigate to category
+            key={item.id}
+            className="category-card link-reset"
+          >
             <div className="image-box">
               <img src={item.image} alt={item.name} />
             </div>
             <p>{item.name}</p>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

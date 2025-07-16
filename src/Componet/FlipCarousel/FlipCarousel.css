@@ -6,16 +6,18 @@
 
 .flip-card {
   perspective: 1000px;
+  width: 100%; /* make wider */
 }
 
 .flip-inner {
   position: relative;
   width: 100%;
-  height: 180px;
+  height: 100%; /* let parent control height */
   text-align: center;
   transition: transform 0.8s;
   transform-style: preserve-3d;
 }
+
 
 .flip-card:hover .flip-inner {
   transform: rotateY(180deg);

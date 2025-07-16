@@ -49,9 +49,13 @@
   object-fit: cover;
 }
 
+.link-reset {
+  text-decoration: none;
+  color: inherit;
+}
 
 .hero-flip {
-  margin-top: 50px;
+  
   background-color: #ffffff;
   padding: 1rem;
   border-radius: 10px;

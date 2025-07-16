@@ -1,16 +1,15 @@
-// // src/context/ShopContext.js
-// import React, { createContext, useState } from "react";
+// src/Context/ShopContext.jsx
+import React, { createContext, useState } from "react";
+import AllProduct from "../Data/AllProduct";
 
-// // 1. Create the context
-// export const ShopContext = createContext();
+export const ShopContext = createContext();
 
-// // 2. Create the provider component
-// export const ShopProvider = ({ children }) => {
-//   const [products, setProducts] = useState([]); // empty for now
+export const ShopProvider = ({ children }) => {
+  const [products, setProducts] = useState(AllProduct);
 
-//   return (
-//     <ShopContext.Provider value={{ products }}>
-//       {children}
-//     </ShopContext.Provider>
-//   );
-// };
+  return (
+    <ShopContext.Provider value={{ products }}>
+      {children}
+    </ShopContext.Provider>
+  );
+};

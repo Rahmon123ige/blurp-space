@@ -14,6 +14,18 @@
 .nav-logo {
   height: 70px;
 }
+.nav-logo {
+  height: 50px; /* or whatever fits your navbar */
+  transition: transform 0.4s ease, filter 0.4s ease;
+  cursor: pointer;
+}
+
+/* Hover magic */
+.nav-logo:hover {
+  transform: scale(1.1) rotate(-3deg);
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2));
+}
+
 
 .search-wrapper {
   display: flex;
@@ -35,6 +47,12 @@
   border-right: none;
   box-sizing: border-box;
 }
+
+.link-reset {
+  text-decoration: none;
+  color: inherit;
+}
+
 
 .btnn {
   background-color: black;
@@ -113,6 +131,7 @@
 .sign-in-btn:hover {
   background-color: #333;
 }
+
 
 .bar{
   color: white;

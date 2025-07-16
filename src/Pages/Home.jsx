@@ -54,19 +54,19 @@ const Home = () => {
     <ProductShow/>
     <ProductShow/>
     <MostValued />
+    <ProductShow/>
+    <ProductShow/>
+    <MostValued />
+    <ProductShow/>
+    <ProductShow/>
+    <MostValued />
+    <ProductShow/>
+    <ProductShow/>
+    <MostValued />
+    <ProductShow/>
+    <ProductShow/>
+    <MostValued />
     <AboutBanner/>
-    <ProductShow/>
-    <ProductShow/>
-    <MostValued />
-    <ProductShow/>
-    <ProductShow/>
-    <MostValued />
-    <ProductShow/>
-    <ProductShow/>
-    <MostValued />
-    <ProductShow/>
-    <ProductShow/>
-    <MostValued />
     </div>
     </>
   );

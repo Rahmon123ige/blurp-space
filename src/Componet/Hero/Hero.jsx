@@ -13,6 +13,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import useIsMobile from "../hooks/useIsMobile"; // custom hook you'll create
 import FlipCarousel from "../FlipCarousel/FlipCarousel";
+import { Link } from "react-router-dom";
 
 // Images
 import Banner1 from '../../Data/affliate.png';
@@ -22,17 +23,17 @@ import Banner4 from '../../Data/Event design.jpg';
 import Banner5 from '../../Data/Firsts-Blurp-Space-Baner-scaled.jpg';
 
 const categories = [
-  { name: "Camera", icon: <FaCamera /> },
-  { name: "Drone", icon: <FaGifts /> },
-  { name: "Gimbals", icon: <FaAlignCenter /> },
-  { name: "Lens", icon: <FaCogs /> },
-  { name: "Lights", icon: <FaLightbulb /> },
-  { name: "Microphones", icon: <FaMicrophone /> },
-  { name: "Tripods", icon: <FaShoppingBag /> },
-  { name: "Gadgets", icon: <FaHeadphones /> },
-  { name: "Fashion Accessories", icon: <FaTshirt /> },
-  { name: "Skin Care", icon: <FaShoppingBag /> },
-  { name: "Others categories", icon: <FaGifts /> },
+  { name: "Camera", icon: <FaCamera />, category: 'Camera' },
+  { name: "Drone", icon: <FaGifts />, category: 'Drone' },
+  { name: "Gimbals", icon: <FaAlignCenter /> , category: 'Gimbals' },
+  { name: "Lens", icon: <FaCogs />, category: 'Lens' } ,
+  { name: "Lights", icon: <FaLightbulb />, category: 'Lights' },
+  { name: "Microphone", icon: <FaMicrophone />,category: 'Microphone' },
+  { name: "Tripods", icon: <FaShoppingBag />,category: 'Tripods' },
+  { name: "Gadgets", icon: <FaHeadphones />,category: 'Gadgets' },
+  { name: "Fashion Accessories", icon: <FaTshirt />,category: 'Fashion Accessories' },
+  { name: "Skin Care", icon: <FaShoppingBag />,category: 'Skin Care' },
+  { name: "Others categories", icon: <FaGifts />, },
 ];
 
 const banners = [Banner5, Banner1, Banner2, Banner3, Banner4];
@@ -43,16 +44,21 @@ const Hero = () => {
   return (
     <section className="hero">
       {/* Categories */}
-      {!isMobile && (
-        <div className="hero-categories">
-          {categories.map((item, index) => (
-            <div className="hero-category" key={index}>
-              {item.icon}
-              <span>{item.name}</span>
-            </div>
-          ))}
-        </div>
-      )}
+    {!isMobile && (
+  <div className="hero-categories">
+    {categories.map((item, index) => (
+      <Link
+        to={`/category/${encodeURIComponent(item.category)}`}
+        className="hero-category link-reset"
+        key={index}
+      >
+        {item.icon}
+        <span>{item.name}</span>
+      </Link>
+    ))}
+  </div>
+)}
+
 
       {/* Carousel */}
       <div className="hero-carousel">
