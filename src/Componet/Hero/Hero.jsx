@@ -23,6 +23,7 @@ import Banner4 from '../../Data/Event design.jpg';
 import Banner5 from '../../Data/Firsts-Blurp-Space-Baner-scaled.jpg';
 
 const categories = [
+  { name: "Fashion Accessories", icon: <FaTshirt />,category: 'Fashion Accessories' },
   { name: "Camera", icon: <FaCamera />, category: 'Camera' },
   { name: "Drone", icon: <FaGifts />, category: 'Drone' },
   { name: "Gimbals", icon: <FaAlignCenter /> , category: 'Gimbals' },
@@ -31,7 +32,6 @@ const categories = [
   { name: "Microphone", icon: <FaMicrophone />,category: 'Microphone' },
   { name: "Tripods", icon: <FaShoppingBag />,category: 'Tripods' },
   { name: "Gadgets", icon: <FaHeadphones />,category: 'Gadgets' },
-  { name: "Fashion Accessories", icon: <FaTshirt />,category: 'Fashion Accessories' },
   { name: "Skin Care", icon: <FaShoppingBag />,category: 'Skin Care' },
   { name: "Others categories", icon: <FaGifts />, },
 ];

@@ -1,77 +1,71 @@
-
 import React, { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { ShopContext } from "../Context/ShopContext";
-import { FaHeart, FaRegHeart, FaStar, FaStarHalfAlt, FaRegStar, FaShoppingCart } from "react-icons/fa";
+import {
+  FaHeart,
+  FaRegHeart,
+  FaStar,
+  FaStarHalfAlt,
+  FaRegStar,
+  FaShoppingCart,
+} from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./CSS/CategoryPage.css";
 
 const CategoryPage = () => {
   const { categoryName } = useParams();
   const decodedCategoryName = decodeURIComponent(categoryName);
 
-  const { products } = useContext(ShopContext);
+  const { products, addToCart,  wishlist, toggleWishlist  } = useContext(ShopContext);
 
   const [minPrice, setMinPrice] = useState(0);
   const [maxPrice, setMaxPrice] = useState(7800000);
   const [sortBy, setSortBy] = useState("Popularity");
-  const [brandFilter, setBrandFilter] = useState("");
-  const [priceFilter, setPriceFilter] = useState("");
-  const [sizeFilter, setSizeFilter] = useState("");
   const [favorites, setFavorites] = useState(new Set());
 
-  
-
-
   const filteredProducts = products.filter(
-  (product) =>
-    product.category === decodedCategoryName &&
-    product.newPrice >= minPrice &&
-    product.newPrice <= maxPrice
-);
+    (product) =>
+      product.category === decodedCategoryName &&
+      product.newPrice >= minPrice &&
+      product.newPrice <= maxPrice
+  );
 
+ const isInWishlist = (productId) =>
+  wishlist.some((item) => item.id === productId);
 
-
-  const toggleFavorite = (productId) => {
-    const newFavorites = new Set(favorites);
-    if (newFavorites.has(productId)) {
-      newFavorites.delete(productId);
-    } else {
-      newFavorites.add(productId);
-    }
-    setFavorites(newFavorites);
-  };
 
   const renderStars = (rating) => {
     const stars = [];
     const fullStars = Math.floor(rating);
     const hasHalfStar = rating % 1 !== 0;
-    
+
     for (let i = 0; i < fullStars; i++) {
       stars.push(<FaStar key={i} className="star filled" />);
     }
-    
+
     if (hasHalfStar) {
       stars.push(<FaStarHalfAlt key="half" className="star half" />);
     }
-    
+
     const remainingStars = 5 - stars.length;
     for (let i = 0; i < remainingStars; i++) {
       stars.push(<FaRegStar key={`empty-${i}`} className="star empty" />);
     }
-    
+
     return stars;
   };
 
-  const calculateDiscount = (oldPrice, newPrice) => {
-    return Math.round(((oldPrice - newPrice) / oldPrice) * 100);
+  const handleAddToCart = (item) => {
+    addToCart(item);
+    toast.success(`${item.name} added to cart!`);
   };
 
   return (
     <div className="category-page">
       {/* Sidebar */}
-      <aside className="sidebar">
+        <aside className="sidebar">
         <div className="filter-section">
           <h3>CATEGORY</h3>
           <div className="category-list">
@@ -203,7 +197,9 @@ const CategoryPage = () => {
         {/* Header */}
         <div className="content-header">
           <h1>The Best Deals On Fashion in Nigeria</h1>
-          <span className="product-count">({filteredProducts.length} products found)</span>
+          <span className="product-count">
+            ({filteredProducts.length} products found)
+          </span>
           <div className="sort-section">
             <span>Sort by:</span>
             <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
@@ -215,36 +211,27 @@ const CategoryPage = () => {
           </div>
         </div>
 
-        {/* Related Results */}
-        <div className="related-results">
-          <span>Related results:</span>
-          <div className="result-tags">
-            <span className="tag">Anniversary</span>
-            <span className="tag">Look Your Best</span>
-            <span className="tag">cloth</span>
-            <span className="tag">Black Friday Accessories</span>
-            <span className="tag">Fashion Accessories</span>
-            <span className="tag">jewelry</span>
-            <span className="tag">female clothes</span>
-            <span className="tag">wom</span>
-          </div>
-        </div>
-
         {/* Filters Bar */}
         <div className="filters-bar">
           <div className="express-tag">
-            <span>📦 EXPRESS</span>
+            <span>📦 Blurp Space</span>
           </div>
           <div className="filter-dropdowns">
             <span>Shipped from Nigeria</span>
             <div className="dropdown">
-              <span>Brand <MdKeyboardArrowDown /></span>
+              <span>
+                Brand <MdKeyboardArrowDown />
+              </span>
             </div>
             <div className="dropdown">
-              <span>Price <MdKeyboardArrowDown /></span>
+              <span>
+                Price <MdKeyboardArrowDown />
+              </span>
             </div>
             <div className="dropdown">
-              <span>Size <MdKeyboardArrowDown /></span>
+              <span>
+                Size <MdKeyboardArrowDown />
+              </span>
             </div>
           </div>
         </div>
@@ -257,42 +244,49 @@ const CategoryPage = () => {
             filteredProducts.map((item) => (
               <div className="product-card" key={item.id}>
                 <div className="product-imagee">
-                 <Link to={`/product/${item.id}`}> <img src={item.image} alt={item.name} /></Link>
-                  <button
-                    className={`favorite-btn ${favorites.has(item.id) ? 'active' : ''}`}
-                    onClick={() => toggleFavorite(item.id)}
-                  >
-                    {favorites.has(item.id) ? <FaHeart /> : <FaRegHeart />}
-                  </button>
+                  <Link to={`/product/${item.id}`}>
+                    <img src={item.image} alt={item.name} />
+                  </Link>
+                 <button
+                        className={`favorite-btn ${isInWishlist(item.id) ? "active" : ""}`}
+                        onClick={() => toggleWishlist(item)}
+                      >
+                        {isInWishlist(item.id) ? <FaHeart className="heart" /> : <FaRegHeart />}
+                      </button>
+
+
                   <div className="product-hover">
-                    <button className="add-to-cart-hover">
+                    <button
+                      className="add-to-cart-hover"
+                      onClick={() => handleAddToCart(item)}
+                    >
                       <FaShoppingCart /> Add to Cart
                     </button>
                   </div>
                 </div>
                 <div className="product-info">
-                 <Link to={`/product/${item.id}`}><h4 className="product-name">{item.name}</h4></Link> 
+                  <Link to={`/product/${item.id}`}>
+                    <h4 className="product-name">{item.name}</h4>
+                  </Link>
                   <div className="price-section">
-                    <span className="current-price">₦ {item.newPrice.toLocaleString()}</span>
-                    {item.oldPrice && (
-                      <>
-                        <span className="original-price">₦ {item.oldPrice.toLocaleString()}</span>
-                        <span className="discount">-{calculateDiscount(item.oldPrice, item.newPrice)}%</span>
-                      </>
-                    )}
+                    <span className="current-price">
+                      ₦ {item.newPrice.toLocaleString()}
+                    </span>
                   </div>
                   <div className="rating-section">
-                    <div className="stars">
-                      {renderStars(item.rating || 4)}
-                    </div>
-                    <span className="reviews">({item.reviews || 100})</span>
+                    <div className="stars">{renderStars(item.rating || 4)}</div>
+                    <span className="reviews">
+                      ({item.reviews || 100})
+                    </span>
                   </div>
                   <div className="brand-info">
-                    <span className="brand">JUMIA</span>
-                    <span className="express">EXPRESS</span>
+                    <span className="brand">Blurp Space</span>
                   </div>
                 </div>
-                <button className="add-to-cart-mobile">
+                <button
+                  className="add-to-cart-mobile"
+                  onClick={() => handleAddToCart(item)}
+                >
                   <FaShoppingCart /> Add to Cart
                 </button>
               </div>

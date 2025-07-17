@@ -40,15 +40,15 @@ const Navbar = () => {
         <div className="mobile-layout">
           <div className="mobile-top-row">
             <div className="mobile-menu-toggle" onClick={() => setMobileMenuOpen(true)}>
-              <FaBars className='bar' />
+              <FaBars className='bars' />
             </div>
 
             <Link to='/'><img src={blacklogo} alt="Blurp Logo" className="nav-logo" /></Link>
 
             <div className="mobile-icons">
-              <Link to='/Auth'><FaUser className='bar' /></Link>
+              <Link to='/Auth'><FaUser className='bars' /></Link>
               <div className="cart-icon">
-                <FaShoppingCart />
+                <Link to='cartpage'><FaShoppingCart /></Link>
                 {/* <span className="cart-count">3</span> */}
               </div>
             </div>
@@ -94,7 +94,7 @@ const Navbar = () => {
                 <hr />
                 <div className="dropdown-item"><FaUser className="dropdown-icon" /> My Account</div>
                 <div className="dropdown-item"><FaBox className="dropdown-icon" /> Orders</div>
-                <div className="dropdown-item"><FaHeart className="dropdown-icon" /> Wishlist</div>
+                <Link to='/wishlist'><div className="dropdown-item"><FaHeart className="dropdown-icon" /> Wishlist</div></Link>
                 <div className="dropdown-item"><GiCash className="dropdown-icon" /> Earn</div>
                 <Link to='/VendorAuth' className="link-reset"><div className="dropdown-item"><ImUserTie className="dropdown-icon" /> Vendor</div></Link>
               </div>
@@ -115,7 +115,7 @@ const Navbar = () => {
             
 
             <div className="cart-icon">
-              <FaShoppingCart className="nav-icon" />
+             <Link to='/cartpage'><FaShoppingCart className="nav-icon" /></Link> 
               <span>Cart</span>
               {/* <span className="cart-count">3</span> */}
             </div>
@@ -133,7 +133,7 @@ const Navbar = () => {
 
           <div className="mobile-links">
             <div><FaBox /> Orders</div>
-            <div><FaHeart /> Wishlist</div>
+            <Link to='/wishlist'><div><FaHeart /> Wishlist</div></Link>
             <Link to='VendorAuth' className="link-reset"><div>Vendor</div></Link>
             <div className="earn-dropdown">
               Earn

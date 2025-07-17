@@ -109,7 +109,7 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #f68b1e;
+  background: #000;
   cursor: pointer;
 }
 
@@ -132,7 +132,7 @@
 }
 
 .apply-btn {
-  background: #f68b1e;
+  background: #000;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -182,30 +182,6 @@
   font-size: 14px;
 }
 
-.related-results {
-  margin-bottom: 15px;
-  font-size: 13px;
-}
-
-.related-results span {
-  color: #666;
-  margin-right: 10px;
-}
-
-.result-tags {
-  display: inline-flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.tag {
-  background: #f68b1e;
-  color: white;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  cursor: pointer;
-}
 
 .filters-bar {
   display: flex;
@@ -217,7 +193,7 @@
 }
 
 .express-tag {
-  background: #f68b1e;
+  background: #000;
   color: white;
   padding: 6px 12px;
   border-radius: 4px;
@@ -297,8 +273,10 @@
 }
 
 .favorite-btn.active {
-  color: #f68b1e;
+  color: #000;
 }
+
+
 
 .product-hover {
   position: absolute;
@@ -317,7 +295,7 @@
 
 .add-to-cart-hover {
   width: 100%;
-  background: #f68b1e;
+  background: #000;
   color: white;
   border: none;
   padding: 10px;
@@ -334,7 +312,7 @@
 .add-to-cart-mobile {
   display: none;
   width: 100%;
-  background: #f68b1e;
+  background: #000;
   color: white;
   border: none;
   padding: 10px;
@@ -375,7 +353,7 @@
   color: #333;
 }
 
-.original-price {
+.original-prize {
   font-size: 12px;
   color: #999;
   text-decoration: line-through;
@@ -383,7 +361,11 @@
 
 .discount {
   font-size: 12px;
-  color: #f68b1e;
+  background-color: #000;
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
   font-weight: bold;
 }
 
@@ -431,12 +413,7 @@
   font-weight: bold;
 }
 
-.express {
-  background: #f68b1e;
-  color: white;
-  padding: 2px 4px;
-  border-radius: 2px;
-}
+
 
 .no-products {
   grid-column: 1 / -1;

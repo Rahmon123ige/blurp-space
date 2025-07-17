@@ -7,6 +7,8 @@ import VendorAuth from './Pages/VendorAuth'
 import Footer from "./Footer/Footer";
 import CategoryPage from "./Pages/CategoryPage";
 import ProductDetails from "./Pages/Productdetails";
+import CartPage from "./Pages/CartPage";
+import WishList from "./Pages/WishList";
 import { Routes, Route } from 'react-router-dom'
 
 const App = () => {
@@ -28,6 +30,8 @@ const App = () => {
           <Route path='/VendorAuth' element={<VendorAuth/>}/>
             <Route path="/category/:categoryName" element={<CategoryPage />} />
             <Route path="/product/:id" element={<ProductDetails />} />
+            <Route path="/cartpage" element={<CartPage />} />
+            <Route path="/wishlist" element={<WishList />} />
         </Routes>
         <Footer/>
       </>

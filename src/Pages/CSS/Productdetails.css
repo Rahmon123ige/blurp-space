@@ -46,7 +46,7 @@
 }
 
 .thumbnail.active {
-  border-color: #ff6900;
+  border-color: #000;
 }
 
 .main-image {
@@ -71,7 +71,7 @@
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  color: #ff6900;
+  color: #000;
   font-size: 18px;
 }
 
@@ -89,7 +89,7 @@
 }
 
 .brand span {
-  color: #ff6900;
+  color: #000;
   font-weight: bold;
 }
 
@@ -126,7 +126,7 @@
   margin-bottom: 15px;
 }
 
-.current-price {
+.current-prize {
   font-size: 28px;
   font-weight: bold;
   color: #000;
@@ -138,8 +138,8 @@
   text-decoration: line-through;
 }
 
-.discount {
-  background: #ff6900;
+.discounts {
+  background: #000;
   color: white;
   padding: 4px 8px;
   border-radius: 4px;
@@ -211,7 +211,7 @@
 
 .add-to-cart-main {
   width: 100%;
-  background: #ff6900;
+  background: #000;
   color: white;
   border: none;
   padding: 15px;
@@ -227,7 +227,7 @@
 }
 
 .add-to-cart-main:hover {
-  background: #e55a00;
+  background: rgb(46, 46, 46);
 }
 
 .promotions h3 {
@@ -483,49 +483,6 @@
   font-size: 12px;
 }
 
-/* Related Products */
-.related-products {
-  margin-top: 40px;
-}
-
-.related-products h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #000;
-}
-
-.related-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.related-item {
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 15px;
-  text-align: center;
-}
-
-.related-item img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
-
-.related-item h4 {
-  font-size: 14px;
-  margin-bottom: 8px;
-  color: #000;
-}
-
-.related-item .price {
-  font-weight: bold;
-  color: #ff6900;
-}
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -541,7 +498,7 @@
 
 @media (max-width: 768px) {
   .product-details{
-    margin-top: 40px;
+    margin-top: 150px;
   }
 
   .product-details {
@@ -571,7 +528,7 @@
     height: 300px;
   }
   
-  .current-price {
+  .current-prize {
     font-size: 24px;
   }
   
@@ -600,7 +557,7 @@
     font-size: 20px;
   }
   
-  .current-price {
+  .current-prize {
     font-size: 22px;
   }
   
